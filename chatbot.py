@@ -25,15 +25,15 @@ tf.app.flags.DEFINE_float("max_gradient_norm", 5.0,
 tf.app.flags.DEFINE_integer("batch_size", 64,
                             "Batch size to use during training.")
 tf.app.flags.DEFINE_integer("size", 1024, "Size of each model layer.")
-tf.app.flags.DEFINE_integer("num_layers", 3, "Number of layers in the model.")
+tf.app.flags.DEFINE_integer("num_layers", 1, "Number of layers in the model.")
 tf.app.flags.DEFINE_integer("from_vocab_size", 40000, "English vocabulary size.")
 tf.app.flags.DEFINE_integer("to_vocab_size", 40000, "French vocabulary size.")
-tf.app.flags.DEFINE_string("data_dir", "/tmp", "Data directory")
-tf.app.flags.DEFINE_string("train_dir", "/tmp", "Training directory.")
-tf.app.flags.DEFINE_string("from_train_data", None, "Training data.")
-tf.app.flags.DEFINE_string("to_train_data", None, "Training data.")
-tf.app.flags.DEFINE_string("from_dev_data", None, "Training data.")
-tf.app.flags.DEFINE_string("to_dev_data", None, "Training data.")
+tf.app.flags.DEFINE_string("data_dir", "./corpus_normal", "Data directory")
+tf.app.flags.DEFINE_string("train_dir", "./model", "Training directory.")
+tf.app.flags.DEFINE_string("from_train_data", "./corpus_normal/train.enc", "Training data.")
+tf.app.flags.DEFINE_string("to_train_data", "./corpus_normal/train.dec", "Training data.")
+tf.app.flags.DEFINE_string("from_dev_data", "./corpus_normal/test.enc", "Training data.")
+tf.app.flags.DEFINE_string("to_dev_data", "./corpus_normal/test.dec", "Training data.")
 tf.app.flags.DEFINE_integer("max_train_data_size", 0,
                             "Limit on the size of training data (0: no limit).")
 tf.app.flags.DEFINE_integer("steps_per_checkpoint", 200,
